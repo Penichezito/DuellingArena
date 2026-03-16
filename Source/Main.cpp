@@ -17,7 +17,11 @@ private:
 public:
 	// Constructor to initialize the character's attributes
 	Character(std::string characterName, int initialHealth, int attackPower)
-		: name(characterName), health(initialHealth), maxHealth(initialHealth), baseAttack(attackPower), isDefending(false) {
+		: name(characterName), 
+		health(initialHealth), 
+		maxHealth(initialHealth), 
+		baseAttack(attackPower), 
+		isDefending(false) {
 	}
 
 	// Getters: methods to access private attributes
@@ -102,13 +106,11 @@ int main() {
 
 	// Game loop continues until one of the characters is defeated
 	while (player.isAlive() && enemy->isAlive()) {
-		std::cout << " /n--- Turn " << round << "---" << std::endl;
+		std::cout << " \n--- Turn " << round << "---" << std::endl;
 		std::cout << player.getName() << "HP: [" << player.getHealth() << "]" << std::endl;
 		std::cout << enemy->getName() << "HP: [" << enemy->getHealth() << "]" << std::endl;
 
 		std::cout << "Choose your action -> (1)Attack or (2)Defend:" << std::endl;
-		std::cout << "(1) Attack" << std::endl;
-		std::cout << "(2) Defend" << std::endl;
 
 		int choice;
 		std::cin >> choice;
@@ -117,7 +119,7 @@ int main() {
 		player.resetDefense();
 		enemy->resetDefense();
 
-		std::cout << "/n> End turn: " << std::endl;
+		std::cout << "\n> End turn: " << std::endl;
 
 		// Player's logic based on user input
 		if (choice == 2) {
